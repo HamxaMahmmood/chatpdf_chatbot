@@ -1,0 +1,103 @@
+
+/* App.css */
+
+
+.chatbot{
+    /* background: pink; */
+    padding: 2rem;
+    min-height: 100%;
+  }
+
+
+  .chatbot .heading-container{
+    text-align: center;
+    margin: 20px;
+    /* background: #000; */
+  }
+
+  
+  .chatbot .chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background: pink; */
+    margin-bottom: 2rem;
+  }
+
+
+.chatbot .patient-message {
+  background-color: #006769; /* Cool green */
+  align-self: flex-start;
+}
+
+.chatbot .doctor-message {
+  background-color: #20587e; /* Cool orange */
+  align-self: flex-end;
+}
+  
+  .chatbot textarea {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #999; /* Changed border color to a lighter shade */
+    /* margin-bottom: 20px; */
+    color: #333; /* Changed text color to a darker shade */
+    background-color: #d5e0e6; /* Changed background color to a lighter shade */
+  }
+
+  .chatbot .input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+  }
+  
+  .chatbot button {
+    border: none;
+    height: 50px;
+    width: 50px;
+    background-color: #4f5757f4;
+    color: white;
+    /* padding: 10px 20px; */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+  
+  .chatbot button:hover {
+    background-color: #000000;
+  }
+  
+  
+  .chatbot .message {
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+    color: #fff; /* Changed text color to white */
+  }
+  
+  
+  
+  .chatbot .answer-container {
+    max-height: 400px; /* Adjust max height as needed */
+    overflow-y: auto;
+    margin-top: 2rem;
+    width: 90%;
+    /* background: pink; */
+  }
+  
+  .chatbot .answer {
+    background-color: #004f50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    word-wrap: break-word; /* Wrap long words */
+  }
+
+  

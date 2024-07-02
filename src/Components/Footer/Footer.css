@@ -1,0 +1,147 @@
+:root {
+    --color-light: #6bd1f0;
+    --color-hover: #48976a;
+    --color-background: rgba(49, 49, 54, 0.993);
+    --color-text: rgb(190, 190, 190);
+    --color-github-bg: #292a30;
+    --color-facebook-bg: #25252b;
+    --color-youtube-bg: #202025;
+    --color-github-hover: #000000;
+    --color-facebook-hover: #4267b2;
+    --color-youtube-hover: #da0e0e;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.privacy {
+    color: var(--color-light);
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.privacy:hover {
+    color: var(--color-hover);
+}
+
+.copyright {
+    background: var(--color-background);
+    color: var(--color-text);
+    margin: 1px;
+    font-size: 15px;
+}
+
+.social {
+    font-size: 20px;
+}
+
+.github {
+    background: var(--color-github-bg);
+}
+
+.github:hover {
+    background-color: var(--color-github-hover);
+    transition: 0.4s;
+}
+
+.facebook {
+    background: var(--color-facebook-bg);
+}
+
+.facebook:hover {
+    background-color: var(--color-facebook-hover);
+    transition: 0.4s;
+}
+
+.youtube {
+    background: var(--color-youtube-bg);
+}
+
+.youtube:hover {
+    background-color: var(--color-youtube-hover);
+    transition: 0.4s;
+}
+
+.footer-container {
+    color: aliceblue;
+    text-align: center;
+    background-color: var(--color-background);
+    font-size: 15px;
+    width: 100%;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 3fr 6fr 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 600px) {
+    .privacy {
+        font-size: 12px;
+        padding-left: 3px;
+    }
+    .copyright {
+        font-size: 7px;
+    }
+    .social {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .privacy {
+        font-size: 14px;
+        padding-left: 5px;
+    }
+    .copyright {
+        font-size: 9px;
+    }
+    .social {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .privacy {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+    .copyright {
+        font-size: 11px;
+    }
+    .social {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .privacy {
+        font-size: 18px;
+        padding-left: 8px;
+    }
+    .copyright {
+        font-size: 13px;
+    }
+    .social {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .privacy {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    .copyright {
+        font-size: 15px;
+    }
+    .social {
+        font-size: 20px;
+    }
+}
