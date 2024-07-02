@@ -53,43 +53,43 @@ function Chatbot() {
       };
 
       const data = {
-        url: "https://arxiv.org/pdf/2404.10779",
+        url: "https://www.efmdglobal.org/wp-content/uploads/The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
       };
-
+      
       await axios
-        .post("https://api.chatpdf.com/v1/sources/add-url", data, config)
-        .then((response) => {
-          console.log("Source ID:", response.data.sourceId);
-          setsourceId(response.data.sourceId);
-        })
-        .catch((error) => {
-          console.log("Error:", error.message);
-          console.log("Response:", error.response.data);
-        });
+      .post("https://api.chatpdf.com/v1/sources/add-url", data, config)
+      .then((response) => {
+        console.log("Source ID:", response.data.sourceId);
+        setsourceId(response.data.sourceId);
+      })
+      .catch((error) => {
+        console.log("Error:", error.message);
+        console.log("Response:", error.response.data);
+      });
     }
     else if (value === 'fine-tuning-llm') {
-
-
+      
+      
       const config = {
         headers: {
           "x-api-key": "sec_3EGrwL3nar83c47RXpbef8e3Z51Axmxf",
           "Content-Type": "application/json",
         },
       };
-
+      
       const data = {
-        url: "https://www.efmdglobal.org/wp-content/uploads/The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+        url: "https://arxiv.org/pdf/2404.10779",
       };
-
+      
       await axios
-        .post("https://api.chatpdf.com/v1/sources/add-url", data, config)
-        .then((response) => {
-          console.log("Source ID:", response.data.sourceId);
-          setsourceId(response.data.sourceId);
-        })
-        .catch((error) => {
-          console.log("Error:", error.message);
-          console.log("Response:", error.response.data);
+      .post("https://api.chatpdf.com/v1/sources/add-url", data, config)
+      .then((response) => {
+        console.log("Source ID:", response.data.sourceId);
+        setsourceId(response.data.sourceId);
+      })
+      .catch((error) => {
+        console.log("Error:", error.message);
+        console.log("Response:", error.response.data);
         });
     }
     setloading("")
@@ -150,7 +150,7 @@ function Chatbot() {
           <h2>ChatBot</h2>
           <p>Embedded Chatbot</p>
           <select id="dropdown" value={selectedOption} onChange={handleselect}>
-            <option value="">--Please choose an option--</option>
+            <option value="">--Please choose a PDF--</option>
             <option value="pakistan-travel-guide">Pakistan travel guide</option>
             <option value="entrepreneurs-guide">Entrepreneurs business guide</option>
             <option value="fine-tuning-llm">Fine Tuning LLMs</option>
@@ -162,11 +162,9 @@ function Chatbot() {
         </div>
         <div className="chat">
           <div className="message patient-message">
-            <p className="text">Hey there, I have a question...</p>
+            <p className="text">Select from any of the PDFs above and ask questions about it.</p>
           </div>
-          <div className="message doctor-message">
-            <p className="text">Sure, go ahead and ask.</p>
-          </div>
+          
           {/* Display previous messages here */}
         </div>
         <div className="input">
