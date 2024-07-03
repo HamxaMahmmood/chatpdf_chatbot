@@ -8,6 +8,12 @@
     min-height: 100%;
   }
 
+  .speaker-button {
+    position: absolute;
+    top: 430px; /* Adjust this value as needed */
+    left: 5px;
+    z-index: 10; /* Ensure the button is on top of other elements */
+  }
 
   .chatbot .heading-container{
     text-align: center;

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import './chatbot.css'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 function Chatbot() {
@@ -147,7 +148,6 @@ function Chatbot() {
         .then((response) => {
           console.log("Result:", response.data.content);
           setAnswer(response.data.content)
-          speakText(response.data.content)
         })
         .catch((error) => {
           console.error("Error:", error.message);
@@ -202,8 +202,14 @@ function Chatbot() {
           ></textarea>
           <button onClick={generateAnswer}><ArrowUpwardIcon /></button>
         </div>
+        <div className='speaker-button'>{answer && (
+            <button onClick={() => speakText(answer)}>
+              <VolumeUpIcon />
+            </button>
+          )}</div>
         <div className="answer-container">
           {answer && <p className="answer">{answer}</p>}
+          
         </div>
       </div>
       <Footer />
