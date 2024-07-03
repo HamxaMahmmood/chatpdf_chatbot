@@ -68,7 +68,7 @@ function Chatbot() {
           console.log("Error:", error.message);
           console.log("Response:", error.response.data);
         });
-    } else if (value === 'entrepreneurs-guide') {
+    } else if (value === 'europe-travel-guide') {
 
 
       const config = {
@@ -79,7 +79,7 @@ function Chatbot() {
       };
 
       const data = {
-        url: "https://www.efmdglobal.org/wp-content/uploads/The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+        url: "https://etc-corporate.org/uploads/pdf/SMARTguide_2015_web.pdf",
       };
       
       await axios
@@ -93,18 +93,19 @@ function Chatbot() {
         console.log("Response:", error.response.data);
       });
     }
-    else if (value === 'fine-tuning-llm') {
-      
-      
+
+    else if (value === 'SA-travel-guide') {
+
+
       const config = {
         headers: {
           "x-api-key": "sec_3EGrwL3nar83c47RXpbef8e3Z51Axmxf",
           "Content-Type": "application/json",
         },
       };
-      
+
       const data = {
-        url: "https://arxiv.org/pdf/2404.10779",
+        url: "https://www.theworldwanderers.com/wp-content/uploads/2016/03/No-BS-Guide-to-South-America.pdf",
       };
       
       await axios
@@ -116,7 +117,7 @@ function Chatbot() {
       .catch((error) => {
         console.log("Error:", error.message);
         console.log("Response:", error.response.data);
-        });
+      });
     }
     setloading("")
   }
@@ -174,12 +175,13 @@ function Chatbot() {
 
         <div class="section-title">
           <h2>ChatBot</h2>
-          <p>Embedded Chatbot</p>
+          <p>AI travel guide</p>
           <select id="dropdown" value={selectedOption} onChange={handleselect}>
             <option value="">--Please choose a PDF--</option>
             <option value="pakistan-travel-guide">Pakistan travel guide</option>
-            <option value="entrepreneurs-guide">Entrepreneurs business guide</option>
-            <option value="fine-tuning-llm">Fine Tuning LLMs</option>
+            <option value="europe-travel-guide">Europe travel guide</option>
+            <option value="SA-travel-guide">South America travel guide</option>
+
 
           </select>
         </div>
