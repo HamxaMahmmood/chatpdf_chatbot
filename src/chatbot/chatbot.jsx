@@ -13,8 +13,33 @@ function Chatbot() {
   const [showHeading, setShowHeading] = useState(true); // State variable to manage heading display
   const [loading,setloading] = useState('')
 
+  async function speakText(text) {
+  if ('speechSynthesis' in window) {
+    const synth = window.speechSynthesis;
+    synth.cancel(); // Cancel any ongoing speech
+
+    const maxChunkLength = 160; // Adjust this length if needed
+    const chunks = text.match(new RegExp(`.{1,${maxChunkLength}}(\\s|$)`, 'g'));
+
+    for (const chunk of chunks) {
+      const utterance = new SpeechSynthesisUtterance(chunk);
+
+      await new Promise((resolve, reject) => {
+        utterance.onend = resolve;
+        utterance.onerror = reject;
+        synth.speak(utterance);
+      });
+    }
+  } else {
+    console.log('Text-to-speech is not supported in this browser.');
+  }
+}
+
+
+
   async function handleselect(event) {
     setloading("The pdf is being uploaded...")
+    setsourceId("")
     const value = event.target.value;
     setSelectedOption(value);
     // Add your event handling logic here
@@ -97,7 +122,7 @@ function Chatbot() {
 
 
   async function generateAnswer() {
-    if (question === "") { return }
+    if (question === "" || sourceId === "") { return }
     setAnswer("Loading...");
     try {
       const config = {
@@ -122,6 +147,7 @@ function Chatbot() {
         .then((response) => {
           console.log("Result:", response.data.content);
           setAnswer(response.data.content)
+          speakText(response.data.content)
         })
         .catch((error) => {
           console.error("Error:", error.message);
